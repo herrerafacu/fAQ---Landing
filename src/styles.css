@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------
+   BASE GLOBAL
+------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-primary text-white font-sans;
+  }
+}
+
+/* -----------------------
+   COMPONENTES REUTILIZABLES
+------------------------ */
+@layer components {
+  .btn-primary {
+    @apply px-10 py-4 bg-white text-primarySolid font-bold rounded-full shadow
+           transition duration-300 hover:bg-blue-100 hover:scale-105;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: width 0.25s ease;
+  }
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  .hover-rise {
+    @apply transition duration-300;
+  }
+  .hover-rise:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ---- Swiper helpers ---- */
+  /* Asegura layering correcto y que los puntos queden superpuestos */
+  .swiper,
+  .mySwiper {
+    @apply relative overflow-hidden;
+  }
+
+  .swiper-pagination {
+    @apply absolute inset-x-0 bottom-3 z-20 flex justify-center;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply z-20;
+  }
+
+  /* Bullets más visibles */
+  .swiper-pagination-bullet {
+    @apply bg-white/60 w-2.5 h-2.5 mx-1;
+  }
+  .swiper-pagination-bullet-active {
+    @apply bg-white;
+  }
+}
+
+/* Ajuste visual de las flechas (no se puede con @apply en pseudo-elementos) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px; /* un poco más grandes */
+  color: #fff; /* blancas para tu fondo */
+}
+
+/* -----------------------
+   UTILIDADES EXTRA
+------------------------ */
+@layer utilities {
+  @keyframes bounce-three-times {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-14px);
+    }
+    60% {
+      transform: translateY(-8px);
+    }
+  }
+  .animate-bounce-3 {
+    animation: bounce-three-times 1s ease 0s 3;
+  }
+}
+
+/* ---- Animaciones suaves ---- */
+@layer utilities {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.6s ease both;
+  }
+}

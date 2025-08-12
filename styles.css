@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base global */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-primary text-white font-sans;
+  }
+}
+
+/* Componentes reutilizables */
+@layer components {
+  .btn-primary {
+    @apply px-10 py-4 bg-white text-primarySolid font-bold rounded-full shadow
+           transition duration-300 hover:bg-blue-100 hover:scale-105;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: width 0.25s ease;
+  }
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  .hover-rise {
+    @apply transition duration-300;
+  }
+  .hover-rise:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Utilities extra si querés (opcional) */
+/* .card { @apply bg-white/10 backdrop-blur rounded-2xl p-6 shadow-soft hover-rise; } */
