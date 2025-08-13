@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node ./node_modules/tailwindcss/lib/cli.js -i ./src/styles.css -o ./dist/styles.css --watch",
-    "build": "node ./node_modules/tailwindcss/lib/cli.js -i ./src/styles.css -o ./dist/styles.css --minify"
+    "dev": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.10",
     "postcss": "^8.4.41",
     "autoprefixer": "^10.4.19"
   },
-  "engines": {
-    "node": "18.x"
-  }
+  "engines": { "node": "22.x" }
 }
