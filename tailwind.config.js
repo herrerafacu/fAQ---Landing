@@ -1,25 +1,16 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html", "./**/*.html"],
+  content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "rgba(0,37,84,0.9)",
-        primarySolid: "#002554",
+        primary: "#0b0f0e", // fondo principal (negro verdoso)
+        surface: "#101614", // secciones
+        card: "#18221e", // bloques internos
+        accent: "#17e39a", // verde menta
+        ink: "#e8f3ef", // texto principal
+        muted: "#9fb1aa", // texto secundario
       },
-      boxShadow: {
-        soft: "0 10px 30px rgba(0,0,0,0.25)",
-      },
-      keyframes: {
-        "bounce-three-times": {
-          "0%,20%,50%,80%,100%": { transform: "translateY(0)" },
-          "40%": { transform: "translateY(-14px)" },
-          "60%": { transform: "translateY(-8px)" },
-        },
-      },
-      animation: {
-        "bounce-3": "bounce-three-times 1s ease 0s 3",
-      },
-      fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
     },
   },
   plugins: [],

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background is transparent -->
+  <g fill="#FFFFFF">
+    <!-- F: vertical stem -->
+    <rect x="120" y="120" width="80" height="272" rx="24" ry="24"/>
+    <!-- F: top arm -->
+    <rect x="168" y="140" width="208" height="72" rx="24" ry="24"/>
+    <!-- F: middle arm -->
+    <rect x="168" y="244" width="152" height="72" rx="24" ry="24"/>
+    <!-- Q: ring made with evenodd path (outer circle minus inner circle) -->
+    <path fill-rule="evenodd" d="
+      M 432 280
+      A 152 152 0 1 1 128 280
+      A 152 152 0 1 1 432 280
+      M 392 280
+      A 112 112 0 1 0 168 280
+      A 112 112 0 1 0 392 280
+    "/>
+    <!-- Q: tail -->
+    <path d="M 396 356 C 418 372, 442 396, 468 424 C 472 428, 471 436, 465 440
+             C 457 446, 448 448, 440 448 C 412 448, 392 434, 372 416
+             C 364 408, 366 394, 376 388
+             C 384 383, 392 372, 396 356 Z"/>
+  </g>
+</svg>

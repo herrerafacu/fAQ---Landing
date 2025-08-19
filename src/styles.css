@@ -10,7 +10,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-primary text-white font-sans;
+    @apply bg-[#000000] text-white font-sans;
   }
 }
 
@@ -19,12 +19,13 @@
 ------------------------ */
 @layer components {
   .btn-primary {
-    @apply px-10 py-4 bg-white text-primarySolid font-bold rounded-full shadow
-           transition duration-300 hover:bg-blue-100 hover:scale-105;
+    @apply px-10 py-4 bg-emerald-400 text-[#0b0f0e] font-bold rounded-full shadow
+           transition duration-300 hover:bg-emerald-300 hover:scale-105;
   }
 
   .link-underline {
-    @apply relative;
+    @apply relative font-semibold;
+    color: #17e39a;
   }
   .link-underline::after {
     content: "";
@@ -33,7 +34,7 @@
     bottom: -4px;
     height: 2px;
     width: 0;
-    background: #fff;
+    background: #17e39a;
     transition: width 0.25s ease;
   }
   .link-underline:hover::after {
@@ -48,35 +49,30 @@
   }
 
   /* ---- Swiper helpers ---- */
-  /* Asegura layering correcto y que los puntos queden superpuestos */
   .swiper,
   .mySwiper {
     @apply relative overflow-hidden;
   }
-
   .swiper-pagination {
     @apply absolute inset-x-0 bottom-3 z-20 flex justify-center;
   }
-
   .swiper-button-next,
   .swiper-button-prev {
     @apply z-20;
   }
-
-  /* Bullets más visibles */
   .swiper-pagination-bullet {
-    @apply bg-white/60 w-2.5 h-2.5 mx-1;
+    @apply bg-emerald-400/60 w-2.5 h-2.5 mx-1;
   }
   .swiper-pagination-bullet-active {
-    @apply bg-white;
+    @apply bg-emerald-400;
   }
 }
 
-/* Ajuste visual de las flechas (no se puede con @apply en pseudo-elementos) */
+/* Ajuste visual de las flechas */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 24px; /* un poco más grandes */
-  color: #fff; /* blancas para tu fondo */
+  font-size: 24px;
+  color: #17e39a;
 }
 
 /* -----------------------
@@ -101,10 +97,7 @@
   .animate-bounce-3 {
     animation: bounce-three-times 1s ease 0s 3;
   }
-}
 
-/* ---- Animaciones suaves ---- */
-@layer utilities {
   @keyframes fade-up {
     from {
       opacity: 0;
